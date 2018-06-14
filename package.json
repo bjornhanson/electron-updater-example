@@ -1,11 +1,16 @@
 {
   "name": "electron-updater-example",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Bjorn Hanson",
   "scripts": {
-    "publish": "build -p always"
+    "publish": "npx electron-builder build -p always",
+    "start": "./node_modules/.bin/electron .",
+    "clean": "rm -rf ./dist",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "electron": "2.0.2",
@@ -16,10 +21,8 @@
     "electron-updater": "2.21.10"
   },
   "build": {
+    "extends": null,
     "appId": "com.github.bjornhanson.electronupdaterexample",
-    "files": [
-      "app"
-    ],
     "productName": "Electron Auto Update POC",
     "mac": {
       "category": "public.app-category.utilities",
