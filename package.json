@@ -1,11 +1,15 @@
 {
   "name": "electron-updater-example",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Bjorn Hanson",
+  "author": {
+    "name": "Bjorn Hanson",
+    "email": "bjorn@example.com",
+    "url": "http://example.com"
+  },
   "scripts": {
-    "publish": "npx electron-builder build -p always",
+    "publish": "npx electron-builder build -p always --linux deb",
     "start": "./node_modules/.bin/electron .",
     "clean": "rm -rf ./dist",
     "pack": "electron-builder --dir",
