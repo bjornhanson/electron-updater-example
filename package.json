@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
@@ -27,6 +27,12 @@
   "build": {
     "extends": null,
     "appId": "com.github.bjornhanson.electronupdaterexample",
+    "files": [
+      "./main.js",
+      "app",
+      "assets",
+      "build"
+    ],
     "productName": "Electron Auto Update POC",
     "mac": {
       "category": "public.app-category.utilities",
