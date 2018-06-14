@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
@@ -9,7 +9,7 @@
     "url": "http://example.com"
   },
   "scripts": {
-    "publish": "npx electron-builder build -p always --linux deb",
+    "publish": "npx electron-builder build -p always",
     "start": "./node_modules/.bin/electron .",
     "clean": "rm -rf ./dist",
     "pack": "electron-builder --dir",
