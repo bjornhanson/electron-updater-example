@@ -1,7 +1,7 @@
 // This is free and unencumbered software released into the public domain.
 // See LICENSE for details
 
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const log = require('electron-log');
 const { autoUpdater } = require("electron-updater");
 
@@ -71,7 +71,7 @@ autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })
 autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow('Update available.');
+  sendStatusToWindow(`Update available (${info.version} - ${info.releaseName})`);
 })
 autoUpdater.on('update-not-available', (info) => {
   sendStatusToWindow('Update not available.');
@@ -87,6 +87,9 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
+
+  // Tell renderer to display 'Update and restart' button
+  win.webContents.send('update-downloaded');
 });
 app.on('ready', function() {
   // Create the Menu
@@ -97,6 +100,11 @@ app.on('ready', function() {
 });
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+// Restart and update app when 'Restart and Update' button is clicked
+ipcMain.on('restart-and-update', function() {
+  autoUpdater.quitAndInstall();
 });
 
 //
