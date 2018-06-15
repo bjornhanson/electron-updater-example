@@ -15,8 +15,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 BODY {
   /* font-family: 'Courier New', Courier, monospace; */
   margin: 10px;
-  padding: 10px;
-  border: 1px dashed dodgerblue;
 }
 
 #controls {
