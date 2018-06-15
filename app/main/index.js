@@ -90,6 +90,9 @@ autoUpdater.on('update-downloaded', (info) => {
 
   // Tell renderer to display 'Update and restart' button
   win.webContents.send('update-downloaded');
+
+  // Stop checking for updates
+  clearInterval(checkForUpdatesInterval);
 });
 app.on('ready', function() {
   // Create the Menu
@@ -120,6 +123,9 @@ ipcMain.on('restart-and-update', function() {
 app.on('ready', function()  {
   autoUpdater.checkForUpdatesAndNotify();
 });
+
+// Check for interval every 10 seconds
+let checkForUpdatesInterval = setInterval(autoUpdater.checkForUpdatesAndNotify, 10000);
 
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
