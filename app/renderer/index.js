@@ -23,5 +23,5 @@ ipcRenderer.on('update-downloaded', function() {
 });
 
 function restartAndUpdate() {
-  ipcRender.send('restart-and-update');
+  ipcRenderer.send('restart-and-update');
 }
