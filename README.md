@@ -29,10 +29,6 @@ If you can't use GitHub, you can use other providers:
 
 3. Install necessary dependencies with:
 
-        yarn
-
-   or
-
         npm install
 
 4. Generate a GitHub access token by going to <https://github.com/settings/tokens/new>.  The access token should have the `repo` scope/permission.  Once you have the token, assign it to an environment variable
@@ -48,10 +44,6 @@ If you can't use GitHub, you can use other providers:
     Make sure to restart IDE/Terminal to inherit latest env variable.
 
 5. Publish for your platform with:
-
-        build -p always
-
-   or
 
         npm run publish
 
