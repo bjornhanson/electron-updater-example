@@ -125,7 +125,7 @@ app.on('ready', function()  {
 });
 
 // Check for interval every 10 seconds
-let checkForUpdatesInterval = setInterval(() => autoUpdater.checkForUpdatesAndNotify, 10000);
+let checkForUpdatesInterval = setInterval(() => autoUpdater.checkForUpdatesAndNotify(), 10000);
 
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
