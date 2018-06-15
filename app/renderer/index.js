@@ -23,5 +23,8 @@ ipcRenderer.on('update-downloaded', function() {
 });
 
 function restartAndUpdate() {
-  ipcRenderer.send('restart-and-update');
+  console.log('Button clicked');
+  debugger;
+
+  // ipcRenderer.send('restart-and-update');
 }
