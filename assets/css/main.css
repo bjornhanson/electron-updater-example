@@ -18,3 +18,7 @@ BODY {
   padding: 10px;
   border: 1px dashed dodgerblue;
 }
+
+#controls {
+  margin-top: 20px;
+}

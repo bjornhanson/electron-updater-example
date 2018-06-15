@@ -59,7 +59,7 @@ function sendStatusToWindow(text) {
   win.webContents.send('message', text);
 }
 function createDefaultWindow() {
-  win = new BrowserWindow({width: 1024, height: 768});
+  win = new BrowserWindow({width: 1440, height: 900});
   win.webContents.openDevTools();
   win.on('closed', () => {
     win = null;
