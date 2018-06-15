@@ -17,6 +17,7 @@ BODY {
   margin: 10px;
   padding: 10px;
   /* border: 1px dashed dodgerblue; */
+  background-color: lime;
 }
 
 #controls {
