@@ -17,7 +17,7 @@ ipcRenderer.on('update-downloaded', function() {
   var button = document.createElement('input');
   button.type = 'button';
   button.value = 'Restart and Update';
-  button.onclick = restartAndUpdate();
+  button.onclick = restartAndUpdate;
 
   document.getElementById('controls').appendChild(button);
 });
